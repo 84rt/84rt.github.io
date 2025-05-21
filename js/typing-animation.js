@@ -39,9 +39,9 @@ function animateNameRetyping(tabId) {
     // Define the name variants for each tab
     const nameVariants = {
         'home': 'Bart Jaworski',
-        'blog': 'Bart Jaworski',
+        'blog': 'Bart\'s Posts',
         'projects': '84rt',
-        'investing': 'Bart Jaworski'
+        'investing': 'Bart\'s Writeups'
     };
     
     // Get the current tab from the class on the name element

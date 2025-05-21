@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!blogContent) return;
     
     // Clear any existing content in the blog section
-    blogContent.innerHTML = '<h1>Posts</h1><div id="blog-posts-list"></div>';
+    blogContent.innerHTML = '<div id="blog-posts-list"></div>';
     const blogPostsList = document.getElementById('blog-posts-list');
     
     try {

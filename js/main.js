@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentTab = localStorage.getItem('activeTab') || 'home';
         const nameVariants = {
             'home': 'Bart Jaworski',
-            'blog': 'Bart Jaworski',
+            'blog': 'Bart\'s Posts',
             'projects': '84rt',
-            'investing': 'Bart Jaworski'
+            'investing': "Bart's Writeups"
         };
         nameElement.textContent = nameVariants[currentTab] || 'Bart Jaworski';
         
