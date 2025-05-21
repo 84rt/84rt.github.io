@@ -9,28 +9,61 @@ document.addEventListener('DOMContentLoaded', async () => {
     const blogPostsList = document.getElementById('blog-posts-list');
     
     try {
-        // Determine the base path for the site
-        // This helps handle both local development and GitHub Pages deployment
-        const basePath = window.location.pathname.endsWith('/') ? 
-                        window.location.pathname : 
-                        window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+        // Get the repository name from the URL (for GitHub Pages)
+        const isGitHubPages = window.location.hostname.includes('github.io');
+        const repoName = isGitHubPages ? window.location.hostname.split('.')[0] : '';
         
-        // Build the URL for the index.json file
-        // First try with the base path
-        let response = await fetch(`${basePath}posts/index.json`);
+        // Array of possible paths to try for index.json
+        const pathsToTry = [
+            `./posts/index.json`,                      // Local relative path
+            `/posts/index.json`,                       // Root relative path
+            `/${repoName}/posts/index.json`,           // GitHub Pages repo-specific path
+            `/posts/index.json`,                       // GitHub Pages root path
+            `https://${window.location.host}/posts/index.json` // Absolute URL
+        ];
         
-        // If that fails, try with a relative path
-        if (!response.ok) {
-            console.log('Trying alternative path for index.json');
-            response = await fetch('./posts/index.json');
+        // Try each path until we find one that works
+        let response = null;
+        let foundPath = null;
+        
+        console.log('Attempting to load blog post index');
+        for (const path of pathsToTry) {
+            try {
+                console.log(`Trying path: ${path}`);
+                const tempResponse = await fetch(path);
+                if (tempResponse.ok) {
+                    response = tempResponse;
+                    foundPath = path;
+                    console.log(`Successfully loaded index from: ${path}`);
+                    break;
+                }
+            } catch (error) {
+                console.log(`Failed with path: ${path}`);
+            }
         }
         
-        // If both attempts fail, throw an error
-        if (!response.ok) {
-            console.error('Failed to fetch blog posts');
-            console.error('Attempted paths:');
-            console.error(`- ${basePath}posts/index.json`);
-            console.error('- ./posts/index.json');
+        // If all attempts fail, try a direct raw GitHub content URL as last resort
+        if (!response || !response.ok) {
+            // For GitHub Pages, try the raw GitHub content URL
+            if (isGitHubPages) {
+                const rawGitHubPath = `https://raw.githubusercontent.com/${repoName}/${repoName}.github.io/main/posts/index.json`;
+                try {
+                    console.log(`Trying raw GitHub URL: ${rawGitHubPath}`);
+                    response = await fetch(rawGitHubPath);
+                    if (response.ok) {
+                        foundPath = rawGitHubPath;
+                        console.log(`Successfully loaded index from raw GitHub: ${rawGitHubPath}`);
+                    }
+                } catch (error) {
+                    console.log(`Failed with raw GitHub path: ${rawGitHubPath}`);
+                }
+            }
+        }
+        
+        // If all attempts fail, throw an error
+        if (!response || !response.ok) {
+            console.error('Failed to fetch blog posts after trying multiple paths');
+            console.error('Attempted paths:', pathsToTry);
             throw new Error('Failed to fetch blog posts');
         }
         
@@ -80,29 +113,61 @@ async function loadBlogPost() {
     if (!slug) return;
     
     try {
-        // Determine the base path for the site
-        // This helps handle both local development and GitHub Pages deployment
-        const basePath = window.location.pathname.endsWith('/') ? 
-                        window.location.pathname : 
-                        window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+        // Get the repository name from the URL (for GitHub Pages)
+        const isGitHubPages = window.location.hostname.includes('github.io');
+        const repoName = isGitHubPages ? window.location.hostname.split('.')[0] : '';
         
-        // Build the URL for the markdown file
-        // First try with the base path
-        let response = await fetch(`${basePath}posts/${slug}.md`);
+        // Array of possible paths to try
+        const pathsToTry = [
+            `./posts/${slug}.md`,                      // Local relative path
+            `/posts/${slug}.md`,                       // Root relative path
+            `/${repoName}/posts/${slug}.md`,           // GitHub Pages repo-specific path
+            `/posts/${slug}.md`,                       // GitHub Pages root path
+            `https://${window.location.host}/posts/${slug}.md` // Absolute URL
+        ];
         
-        // If that fails, try with a relative path
-        if (!response.ok) {
-            console.log(`Trying alternative path for ${slug}.md`);
-            response = await fetch(`./posts/${slug}.md`);
+        // Try each path until we find one that works
+        let response = null;
+        let foundPath = null;
+        
+        console.log(`Attempting to load post: ${slug}.md`);
+        for (const path of pathsToTry) {
+            try {
+                console.log(`Trying path: ${path}`);
+                const tempResponse = await fetch(path);
+                if (tempResponse.ok) {
+                    response = tempResponse;
+                    foundPath = path;
+                    console.log(`Successfully loaded from: ${path}`);
+                    break;
+                }
+            } catch (error) {
+                console.log(`Failed with path: ${path}`);
+            }
         }
         
-        // If both attempts fail, throw an error
-        if (!response.ok) {
-            // Log detailed information for debugging
-            console.error(`Failed to load post: ${slug}.md`);
-            console.error(`Attempted paths:`);
-            console.error(`- ${basePath}posts/${slug}.md`);
-            console.error(`- ./posts/${slug}.md`);
+        // If all attempts fail, try a direct raw GitHub content URL as last resort
+        if (!response || !response.ok) {
+            // For GitHub Pages, try the raw GitHub content URL
+            if (isGitHubPages) {
+                const rawGitHubPath = `https://raw.githubusercontent.com/${repoName}/${repoName}.github.io/main/posts/${slug}.md`;
+                try {
+                    console.log(`Trying raw GitHub URL: ${rawGitHubPath}`);
+                    response = await fetch(rawGitHubPath);
+                    if (response.ok) {
+                        foundPath = rawGitHubPath;
+                        console.log(`Successfully loaded from raw GitHub: ${rawGitHubPath}`);
+                    }
+                } catch (error) {
+                    console.log(`Failed with raw GitHub path: ${rawGitHubPath}`);
+                }
+            }
+        }
+        
+        // If all attempts fail, throw an error
+        if (!response || !response.ok) {
+            console.error(`Failed to load post: ${slug}.md after trying multiple paths`);
+            console.error(`Attempted paths:`, pathsToTry);
             throw new Error('Post not found');
         }
         
