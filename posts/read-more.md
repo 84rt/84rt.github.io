@@ -1,6 +1,6 @@
 ---
 title: Read More
-date: December 11, 2024
+date: October 21, 2024
 ---
 
 *“In my whole life, I have known no wise people (over a broad subject matter area) who didn’t read all the time—none, zero. You’d be amazed at how much Warren [Buffett] reads—and how much I read. My children laugh at me. They think I’m a book with a couple of legs sticking out.” - Charlie Munger*

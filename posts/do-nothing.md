@@ -1,6 +1,10 @@
 ---
-title: Do Nothing
-date: May 21, 2025
+title: A Protocol For Deep Insight: Actively Do Nothing
+date: June 21, 2025
 ---
 
-I like to do nothing.
+Sit down, or lie down, and force yourself to do nothing but think deeply. You can think deeply about the nature of the world around you, a concept, your thoughts, or whatever is currently on your mind. Actively choose to be as inactive as possible. This is going to be painful at first, as the human brain would take in [physical pain rather than be bored](https://www.science.org/doi/10.1126/science.1250830?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed), but if you allow yourself to contemplate actively, it is going to be more than worth the pain.
+
+I like to think of it as exercising the “curiosity” part of my brain. When you deprive yourself of outside stimuli, all of a sudden the most mundane of things become infinitely fascinating. The second-order effect of this exercise is the deep feeling of fascination and motivation to do and explore – the opposite of lethargy in a way. The first-order effect is the near-immediate perspicuity and insight into the world around you. It is as though you’ve been too busy trying to understand the world to actually stop and look at the thing that you are trying to understand.
+
+All realizations I had this way left me with not knowledge, but a deep understanding of concepts that I had previously taken for granted. I can’t convey through text the magnitude of gaining a deep intuitive feeling for the size of the universe, or the shortness of our lives, or how most of the things we concern ourselves over on a day-to-day basis are imaginary, or the nearly infinite depth and complexity of even the simplest of physical objects around you. I can only tell you to go and do it for yourself. So go, and internalize what it means to be alive, in this very moment

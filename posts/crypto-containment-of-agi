@@ -1,0 +1,10 @@
+
+---
+title: On the nuanced impracticality of cryptographic containment schemes for dangerous AI
+date: July 8, 2024
+---
+
+
+Learning about cryptography, in particular, about privacy-preserving techniques such as Secure Multi-Party Computation and Fully Homomorphic Encryption over the past few months I realised the potential applicability of these techniques in the problem of AI Boxing. This led me to explore the pragmatic side of AI boxing, the issue of centralisation of power if cryptographic boxing were to be implemented, and subsequently what could be done about it. 
+
+...
