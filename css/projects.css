@@ -9,6 +9,12 @@ body.projects-theme {
   border-bottom: 1px solid rgba(13, 110, 61, 0.2);
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
+  background-color: #f8f9fa;
+}
+
+/* Mobile menu styles for projects theme */
+.projects-theme .tabs {
+  background-color: #f8f9fa;
 }
 
 .projects-name {

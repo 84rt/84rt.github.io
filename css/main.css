@@ -39,7 +39,6 @@ body {
   /* Ensure header stays fixed at the top */
   position: sticky;
   top: 0;
-  background-color: inherit;
   z-index: 100;
 }
 
@@ -177,7 +176,7 @@ body {
 /* Mobile menu toggle button */
 .mobile-menu-toggle {
   display: none;
-  background: none;
+  background: transparent;
   border: none;
   cursor: pointer;
   padding: 10px;
@@ -188,9 +187,9 @@ body {
   display: block;
   position: relative;
   width: 24px;
-  height: 2px;
-  background-color: currentColor;
-  transition: background-color 0.3s;
+  height: 0;
+  background-color: transparent;
+  transition: all 0.3s;
 }
 
 .hamburger-icon::before,
@@ -212,16 +211,12 @@ body {
 }
 
 /* Mobile menu open state */
-.mobile-menu-open .hamburger-icon {
-  background-color: transparent;
-}
-
 .mobile-menu-open .hamburger-icon::before {
-  transform: rotate(45deg) translate(4px, 4px);
+  transform: rotate(45deg) translate(0, 6px);
 }
 
 .mobile-menu-open .hamburger-icon::after {
-  transform: rotate(-45deg) translate(4px, -4px);
+  transform: rotate(-45deg) translate(0, -6px);
 }
 
 /* Responsive styles */
@@ -239,20 +234,20 @@ body {
     display: block;
     grid-column: 2;
     justify-self: end;
+    position: relative;
+    z-index: 102; /* Higher than the menu to stay on top */
   }
   
   .tabs {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%;
-    max-width: 300px;
+    width: 100%;
     height: 100vh;
-    background-color: inherit;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding-top: 80px;
+    justify-content: center;
+    padding-top: 0;
     transition: right 0.3s ease;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     z-index: 100;
@@ -264,8 +259,12 @@ body {
   
   .tab {
     width: 100%;
-    padding: 15px 0;
+    padding: 20px 0;
     text-align: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
   }
 }

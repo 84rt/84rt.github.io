@@ -9,6 +9,12 @@ body.blog-theme {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
   padding-bottom: 1rem;
+  background-color: white;
+}
+
+/* Mobile menu styles for blog theme */
+.blog-theme .tabs {
+  background-color: white;
 }
 
 .blog-name {
