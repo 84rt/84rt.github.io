@@ -1,22 +1,27 @@
 [
   {
-    "slug": "do-nothing",
-    "title": "A Protocol For Deep Insight: Actively Do Nothing",
-    "date": "June 21, 2025"
-    },
-    {
+    "slug": "2024-book-review",
+    "title": "2024 Book Review",
+    "date": "December 24, 2024"
+  },
+  {
     "slug": "read-more",
     "title": "Read More",
     "date": "October 21, 2024"
-    },
-    {
+  },
+  {
     "slug": "crypto-containment-of-agi",
     "title": "On the nuanced impracticality of cryptographic containment schemes for dangerous AI",
     "date": "July 8, 2024"
-    },
-    {
+  },
+  {
+    "slug": "do-nothing",
+    "title": "A Protocol For Deep Insight: Actively Do Nothing",
+    "date": "June 11, 2024"
+  },
+  {
     "slug": "about-this-blog",
     "title": "About This Blog",
     "date": "December 15, 2023"
-    }
+  }
 ]

@@ -1,6 +1,6 @@
 ---
 title: A Protocol For Deep Insight: Actively Do Nothing
-date: June 21, 2025
+date: June 11, 2024
 ---
 
 Sit down, or lie down, and force yourself to do nothing but think deeply. You can think deeply about the nature of the world around you, a concept, your thoughts, or whatever is currently on your mind. Actively choose to be as inactive as possible. This is going to be painful at first, as the human brain would take in [physical pain rather than be bored](https://www.science.org/doi/10.1126/science.1250830?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed), but if you allow yourself to contemplate actively, it is going to be more than worth the pain.
