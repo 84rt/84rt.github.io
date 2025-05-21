@@ -1,3 +1,8 @@
+---
+title: About This Blog
+date: December 15, 2023
+---
+
 I am far from a good writer, so following the principle of learning through practice decided to bring to existence this blog. The posts here are unlikely to have any form of structure, regularity or reading value.
 
 I do have to make a note that all posts here are and will be relatively low effort, and I do not intend to ensure that the information conveyed in them is original (or correct for that matter).
