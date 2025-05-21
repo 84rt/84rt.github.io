@@ -14,9 +14,6 @@ body.investing-theme {
 .investing-name {
   font-family: 'Playfair Display', Georgia, serif;
   color: #333;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  font-size: 1.2rem;
 }
 
 .investing-theme .container {

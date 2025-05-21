@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+/* Always reserve space for scrollbar to prevent layout shifts */
+html {
+  overflow-y: scroll;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
@@ -16,14 +21,22 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem 0;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
+  position: relative;
+  /* Ensure header stays fixed at the top */
+  position: sticky;
+  top: 0;
+  background-color: inherit;
+  z-index: 100;
 }
 
 .name-container {
   display: flex;
   align-items: center;
+  grid-column: 1;
+  width: 200px; /* Fixed width for name container */
 }
 
 .typing-name {
@@ -64,13 +77,34 @@ body {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  /* Ensure consistent font regardless of theme */
+  font-family: 'Inter', sans-serif !important;
+  /* Keep tabs container stable */
+  width: 100%;
+  max-width: 500px;
+  grid-column: 2;
+  /* Ensure it stays centered */
+  margin: 0;
 }
 
 .tab {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0;
   cursor: pointer;
   border-radius: 4px;
   transition: all 0.2s ease;
+  /* Set a fixed width to prevent jumping */
+  flex: 1;
+  width: 80px;
+  box-sizing: border-box;
+  text-align: center;
+  /* Ensure the tab text doesn't change font */
+  font-family: 'Inter', sans-serif !important;
+  /* Prevent text from wrapping */
+  white-space: nowrap;
+  /* Ensure consistent display */
+  display: block;
+  /* Prevent overflow */
+  overflow: hidden;
 }
 
 .tab:hover {

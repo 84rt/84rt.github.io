@@ -14,6 +14,7 @@ body.blog-theme {
 .blog-name {
   font-family: 'Inter', sans-serif;
   color: black;
+  font-weight: 600;
 }
 
 .blog-theme .container {
