@@ -9,9 +9,28 @@ document.addEventListener('DOMContentLoaded', async () => {
     const blogPostsList = document.getElementById('blog-posts-list');
     
     try {
-        // Fetch the list of blog posts
-        const response = await fetch('./posts/index.json');
+        // Determine the base path for the site
+        // This helps handle both local development and GitHub Pages deployment
+        const basePath = window.location.pathname.endsWith('/') ? 
+                        window.location.pathname : 
+                        window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+        
+        // Build the URL for the index.json file
+        // First try with the base path
+        let response = await fetch(`${basePath}posts/index.json`);
+        
+        // If that fails, try with a relative path
         if (!response.ok) {
+            console.log('Trying alternative path for index.json');
+            response = await fetch('./posts/index.json');
+        }
+        
+        // If both attempts fail, throw an error
+        if (!response.ok) {
+            console.error('Failed to fetch blog posts');
+            console.error('Attempted paths:');
+            console.error(`- ${basePath}posts/index.json`);
+            console.error('- ./posts/index.json');
             throw new Error('Failed to fetch blog posts');
         }
         
@@ -61,9 +80,29 @@ async function loadBlogPost() {
     if (!slug) return;
     
     try {
-        // Fetch the post content
-        const response = await fetch(`./posts/${slug}.md`);
+        // Determine the base path for the site
+        // This helps handle both local development and GitHub Pages deployment
+        const basePath = window.location.pathname.endsWith('/') ? 
+                        window.location.pathname : 
+                        window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+        
+        // Build the URL for the markdown file
+        // First try with the base path
+        let response = await fetch(`${basePath}posts/${slug}.md`);
+        
+        // If that fails, try with a relative path
         if (!response.ok) {
+            console.log(`Trying alternative path for ${slug}.md`);
+            response = await fetch(`./posts/${slug}.md`);
+        }
+        
+        // If both attempts fail, throw an error
+        if (!response.ok) {
+            // Log detailed information for debugging
+            console.error(`Failed to load post: ${slug}.md`);
+            console.error(`Attempted paths:`);
+            console.error(`- ${basePath}posts/${slug}.md`);
+            console.error(`- ./posts/${slug}.md`);
             throw new Error('Post not found');
         }
         
