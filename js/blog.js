@@ -109,38 +109,25 @@ async function loadBlogPost() {
         
         document.body.innerHTML = postHTML;
         
-        // Use markdown-it to convert markdown to HTML
+        // Use our markdown renderer to convert markdown to HTML
         const postContent = document.getElementById('post-content');
         
-        // Try to render markdown with markdown-it first, fall back to simple renderer if not available
+        // Use the renderMarkdown function from markdown-renderer.js
         let renderedContent = '';
         
         try {
-            // Check if markdown-it is available
-            if (typeof window.markdownit !== 'undefined') {
-                // Use markdown-it
-                const md = window.markdownit({
-                    html: true,
-                    breaks: true,
-                    linkify: true,
-                    typographer: true
-                });
-                
-                // Add footnote plugin if available
-                if (typeof window.markdownitFootnote !== 'undefined') {
-                    md.use(window.markdownitFootnote);
-                }
-                
-                renderedContent = md.render(content);
+            // Check if our renderMarkdown function is available
+            if (typeof window.renderMarkdown === 'function') {
+                renderedContent = window.renderMarkdown(content);
             } else {
-                // Fallback to simple markdown renderer
-                console.warn('markdown-it not available, using simple renderer');
-                renderedContent = window.simpleMarkdownToHtml(content);
+                // If our renderer is not available, use a basic fallback
+                console.error('renderMarkdown function not available, using basic fallback');
+                renderedContent = `<pre>${content}</pre>`;
             }
         } catch (error) {
             console.error('Error rendering markdown:', error);
-            // Fallback to simple markdown renderer
-            renderedContent = window.simpleMarkdownToHtml(content);
+            // Use a very basic fallback if everything else fails
+            renderedContent = `<pre>${content}</pre>`;
         }
         
         // Render the content
