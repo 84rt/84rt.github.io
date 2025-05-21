@@ -109,32 +109,35 @@ async function loadBlogPost() {
         
         document.body.innerHTML = postHTML;
         
-        // Convert markdown to HTML (using a simple approach)
-        // For a production site, you'd want to use a proper markdown parser like marked.js
+        // Use markdown-it to convert markdown to HTML
         const postContent = document.getElementById('post-content');
         
-        // Simple markdown conversion (headings, paragraphs, bold, italic)
-        let html = content
-            // Convert headings
-            .replace(/^### (.*$)/gm, '<h3>$1</h3>')
-            .replace(/^## (.*$)/gm, '<h2>$1</h2>')
-            .replace(/^# (.*$)/gm, '<h1>$1</h1>')
-            // Convert bold and italic
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\*(.*?)\*/g, '<em>$1</em>')
-            // Convert links
-            .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>')
-            // Convert lists
-            .replace(/^\s*\-\s*(.*$)/gm, '<li>$1</li>')
-            // Convert paragraphs (any line that doesn't start with < and has content)
-            .replace(/^([^<].*)/gm, '<p>$1</p>');
+        // Initialize markdown-it with options
+        // Check if markdownit is available as a global variable
+        if (typeof markdownit === 'undefined' && typeof window.markdownIt === 'undefined') {
+            console.error('markdown-it library not found');
+            throw new Error('markdown-it library not found');
+        }
         
-        // Wrap lists
-        html = html.replace(/<li>(.*?)<\/li>\s*<li>/g, '<li>$1</li>\n<li>');
-        html = html.replace(/<li>(.*?)<\/li>/g, '<ul><li>$1</li></ul>');
-        html = html.replace(/<\/ul>\s*<ul>/g, '');
+        // Use the correct reference to the markdown-it library
+        const mdLib = typeof markdownit !== 'undefined' ? markdownit : window.markdownIt;
+        const md = mdLib({
+            html: true,           // Enable HTML tags in source
+            breaks: true,        // Convert '\n' in paragraphs into <br>
+            linkify: true,       // Autoconvert URL-like text to links
+            typographer: true,   // Enable some language-neutral replacement + quotes beautification
+        });
         
-        postContent.innerHTML = html;
+        // Add the footnote plugin if available
+        const footnotePlugin = typeof markdownitFootnote !== 'undefined' ? markdownitFootnote : 
+                              (typeof window.markdownitFootnote !== 'undefined' ? window.markdownitFootnote : null);
+        
+        if (footnotePlugin) {
+            md.use(footnotePlugin);
+        }
+        
+        // Render the markdown content
+        postContent.innerHTML = md.render(content);
         
     } catch (error) {
         console.error('Error loading blog post:', error);

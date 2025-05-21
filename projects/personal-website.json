@@ -1,0 +1,11 @@
+{
+  "title": "Personal Website",
+  "description": "A multi-themed personal website featuring a blog, projects, and investing section.",
+  "tags": ["HTML", "CSS", "JavaScript"],
+  "links": [
+    {
+      "text": "View Code",
+      "url": "https://github.com/84rt/84rt.github.io"
+    }
+  ]
+}
