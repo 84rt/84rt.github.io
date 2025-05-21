@@ -5,6 +5,26 @@ body.home-theme {
   font-family: 'Inter', sans-serif;
 }
 
+/* Link styles for home section */
+.home-content a {
+  color: #2e8b57; /* Green color for links */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.home-content a:hover {
+  color: #1e5b3a; /* Darker green on hover */
+  text-decoration: underline;
+}
+
+.home-content a:visited {
+  color: #3cb371; /* Slightly different green for visited links */
+}
+
+.home-content a:active {
+  color: #006400; /* Dark green when clicked/active */
+}
+
 .home-theme .site-header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
