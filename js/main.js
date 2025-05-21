@@ -1,5 +1,7 @@
 // Main JavaScript for handling tab switching and theme changing
 document.addEventListener('DOMContentLoaded', () => {
+    // Check for hash in URL for direct navigation
+    const hash = window.location.hash.substring(1); // Remove the # symbol
     // Get all tab elements
     const tabs = document.querySelectorAll('.tab');
     const contents = document.querySelectorAll('.content');
@@ -54,13 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Check for saved tab in local storage
-    const savedTab = localStorage.getItem('activeTab');
-    if (savedTab && document.querySelector(`[data-tab="${savedTab}"]`)) {
-        setActiveTab(savedTab);
+    // Check for hash in URL first, then saved tab in local storage
+    if (hash && document.querySelector(`[data-tab="${hash}"]`)) {
+        setActiveTab(hash);
     } else {
-        // Set home as default tab
-        setActiveTab('home');
+        const savedTab = localStorage.getItem('activeTab');
+        if (savedTab && document.querySelector(`[data-tab="${savedTab}"]`)) {
+            setActiveTab(savedTab);
+        } else {
+            // Set home as default tab
+            setActiveTab('home');
+        }
     }
     
     // Initialize the name with the correct style without animation on first load

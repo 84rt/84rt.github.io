@@ -1,0 +1,16 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Personal website with blog, projects, and investing sections",
+  "main": "index.js",
+  "scripts": {
+    "generate-blog-index": "node generate-blog-index.js",
+    "start": "npx http-server -p 3000"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
