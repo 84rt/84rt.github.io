@@ -1,0 +1,124 @@
+/* Style for the Coding Portfolio Tab - Modern with hacker vibe in light theme */
+body.portfolio-theme {
+  background-color: #f8f9fa;
+  color: #0d6e3d;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.portfolio-theme .container {
+  max-width: 1000px;
+}
+
+/* Tab styling moved to main.css */
+
+.portfolio-theme a {
+  color: #0d6e3d;
+  text-decoration: none;
+  border-bottom: 1px dotted #0d6e3d;
+}
+
+.portfolio-theme a:hover {
+  border-bottom: 1px solid #0d6e3d;
+}
+
+.portfolio-theme h1, .portfolio-theme h2, .portfolio-theme h3 {
+  color: #333;
+  font-weight: 600;
+}
+
+.portfolio-theme .project-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-theme .project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(13, 110, 61, 0.1);
+}
+
+.portfolio-theme .project-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.portfolio-theme .project-description {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.portfolio-theme .project-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.portfolio-theme .project-tag {
+  background-color: #e8f5ef;
+  color: #0d6e3d;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+.portfolio-theme .project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.portfolio-theme .terminal {
+  background-color: #f0f5f3;
+  border-radius: 5px;
+  padding: 1rem;
+  border: 1px solid #d0e0d8;
+  margin: 2rem 0;
+}
+
+.portfolio-theme .terminal-header {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-theme .terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.portfolio-theme .terminal-button.red {
+  background-color: #ff5f56;
+}
+
+.portfolio-theme .terminal-button.yellow {
+  background-color: #ffbd2e;
+}
+
+.portfolio-theme .terminal-button.green {
+  background-color: #27c93f;
+}
+
+.portfolio-theme .terminal-content {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  color: #0d6e3d;
+  line-height: 1.4;
+}
+
+.portfolio-theme .cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.2em;
+  background-color: #0d6e3d;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}

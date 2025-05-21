@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Tab-specific Stylesheets -->
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/investing.css">
+</head>
+<body class="blog-theme">
+    <div class="container">
+        <!-- Navigation Tabs -->
+        <nav class="tabs">
+            <div class="tab active" data-tab="blog">Blog</div>
+            <div class="tab" data-tab="portfolio">Portfolio</div>
+            <div class="tab" data-tab="investing">Investing</div>
+        </nav>
+        
+        <!-- Blog Content -->
+        <div id="blog" class="content active">
+            <h1>Welcome to My Blog</h1>
+            
+            <article class="blog-post">
+                <h2 class="post-title">Getting Started with Markdown</h2>
+                <div class="post-date">May 21, 2025</div>
+                <div class="post-content">
+                    <p>Markdown is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML and many other formats.</p>
+                    
+                    <h3>Why Use Markdown?</h3>
+                    <p>Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.</p>
+                    
+                    <p>Here's a quick example of Markdown syntax:</p>
+                    
+                    <pre><code># Heading 1
+## Heading 2
+
+- List item 1
+- List item 2
+
+**Bold text** and *italic text*
+
+[Link text](https://example.com)</code></pre>
+                    
+                    <p>This creates a clean, simple document that's easy to read and write.</p>
+                </div>
+            </article>
+            
+            <article class="blog-post">
+                <h2 class="post-title">Minimalism in Web Design</h2>
+                <div class="post-date">May 15, 2025</div>
+                <div class="post-content">
+                    <p>Minimalism in web design focuses on simplicity and removing unnecessary elements. This approach can lead to faster websites, clearer communication, and a better user experience.</p>
+                    
+                    <blockquote>
+                        <p>Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.</p>
+                        <p>— Antoine de Saint-Exupéry</p>
+                    </blockquote>
+                    
+                    <p>Key principles of minimalist design include:</p>
+                    <ul>
+                        <li>Limited color palette</li>
+                        <li>Ample white space</li>
+                        <li>Simple typography</li>
+                        <li>Reduced elements</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+        
+        <!-- Portfolio Content -->
+        <div id="portfolio" class="content">
+            <h1>Coding Portfolio</h1>
+            
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-button red"></div>
+                    <div class="terminal-button yellow"></div>
+                    <div class="terminal-button green"></div>
+                </div>
+                <div class="terminal-content">
+                    <span class="typing-animation">Welcome to my coding portfolio! Here you'll find projects I've built using various technologies.</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <h2 class="project-title">Personal Website</h2>
+                <div class="project-description">A multi-themed personal website featuring a blog, portfolio, and investing section.</div>
+                <div class="project-tags">
+                    <span class="project-tag">HTML</span>
+                    <span class="project-tag">CSS</span>
+                    <span class="project-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="#">View Code</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <h2 class="project-title">Weather App</h2>
+                <div class="project-description">A real-time weather application using modern web technologies and APIs.</div>
+                <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag">Node.js</span>
+                    <span class="project-tag">API</span>
+                </div>
+                <div class="project-links">
+                    <a href="#">View Code</a>
+                    <a href="#">Live Demo</a>
+                </div>
+            </div>
+            
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-button red"></div>
+                    <div class="terminal-button yellow"></div>
+                    <div class="terminal-button green"></div>
+                </div>
+                <div class="terminal-content">
+                    <span class="typing-animation">$ ls -la skills/
+total 42
+drwxr-xr-x  2 user  staff  JavaScript
+drwxr-xr-x  2 user  staff  Python
+drwxr-xr-x  2 user  staff  React
+drwxr-xr-x  2 user  staff  Node.js
+drwxr-xr-x  2 user  staff  CSS
+drwxr-xr-x  2 user  staff  HTML</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Investing Content -->
+        <div id="investing" class="content">
+            <header class="header">
+                <h1 class="header-title">Investing Journal</h1>
+                <div class="header-date">Latest Update: May 21, 2025</div>
+            </header>
+            
+            <article class="article">
+                <h2 class="article-title">Analysis: Tech Sector Outlook 2025</h2>
+                <div class="article-meta">By Your Name | May 21, 2025</div>
+                <div class="article-content">
+                    <p>The technology sector continues to evolve at a rapid pace in 2025, with artificial intelligence and quantum computing leading the charge. After a period of consolidation in late 2024, valuations have started to normalize, potentially creating opportunities for long-term investors.</p>
+                    
+                    <p>Several key trends are worth monitoring:</p>
+                    
+                    <ul>
+                        <li>The integration of AI across enterprise software</li>
+                        <li>Regulatory developments in data privacy</li>
+                        <li>Quantum computing's transition from research to commercial applications</li>
+                        <li>Continued shifts in semiconductor supply chains</li>
+                    </ul>
+                    
+                    <p>While the sector still commands premium valuations relative to historical averages, the growth trajectory appears sustainable given the fundamental changes in how technology is deployed across industries.</p>
+                    
+                    <p>The emerging consensus among analysts suggests a more discriminating market ahead, with emphasis on profitability and sustainable business models rather than pure growth metrics.</p>
+                </div>
+            </article>
+            
+            <div class="stock-ticker">
+                <h3>Portfolio Watchlist</h3>
+                <table class="stock-table">
+                    <thead>
+                        <tr>
+                            <th>Ticker</th>
+                            <th>Company</th>
+                            <th>Price</th>
+                            <th>Change</th>
+                            <th>P/E Ratio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AAPL</td>
+                            <td>Apple Inc.</td>
+                            <td>$192.36</td>
+                            <td class="stock-positive">+2.4%</td>
+                            <td>28.5</td>
+                        </tr>
+                        <tr>
+                            <td>MSFT</td>
+                            <td>Microsoft Corp.</td>
+                            <td>$415.73</td>
+                            <td class="stock-positive">+1.2%</td>
+                            <td>34.1</td>
+                        </tr>
+                        <tr>
+                            <td>GOOGL</td>
+                            <td>Alphabet Inc.</td>
+                            <td>$178.42</td>
+                            <td class="stock-negative">-0.8%</td>
+                            <td>22.7</td>
+                        </tr>
+                        <tr>
+                            <td>AMZN</td>
+                            <td>Amazon.com Inc.</td>
+                            <td>$182.90</td>
+                            <td class="stock-positive">+3.1%</td>
+                            <td>42.3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/typing-animation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

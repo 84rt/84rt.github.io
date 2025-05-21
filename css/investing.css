@@ -1,0 +1,120 @@
+/* Style for the Investing Tab - Old newspaper with cream background */
+body.investing-theme {
+  background-color: #f7f2e5;
+  color: #333;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.investing-theme .container {
+  max-width: 900px;
+}
+
+/* Tab styling moved to main.css */
+
+.investing-theme .header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #333;
+}
+
+.investing-theme .header-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.investing-theme .header-date {
+  font-style: italic;
+  color: #666;
+}
+
+.investing-theme .article {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.investing-theme .article-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.investing-theme .article-meta {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.investing-theme .article-content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  column-count: 1;
+}
+
+.investing-theme h1, .investing-theme h2, .investing-theme h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+}
+
+.investing-theme a {
+  color: #333;
+  text-decoration: underline;
+}
+
+.investing-theme blockquote {
+  font-style: italic;
+  border-left: 3px solid #ccc;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+}
+
+.investing-theme .stock-ticker {
+  background-color: #e9e2d5;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin: 2rem 0;
+  border: 1px solid #d5cdc0;
+}
+
+.investing-theme .stock-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.investing-theme .stock-table th,
+.investing-theme .stock-table td {
+  padding: 0.5rem;
+  text-align: right;
+  border-bottom: 1px solid #d5cdc0;
+}
+
+.investing-theme .stock-table th {
+  font-weight: 700;
+  border-bottom: 2px solid #333;
+}
+
+.investing-theme .stock-table tr:last-child td {
+  border-bottom: none;
+}
+
+.investing-theme .stock-positive {
+  color: #006400;
+}
+
+.investing-theme .stock-negative {
+  color: #8b0000;
+}
+
+@media (min-width: 992px) {
+  .investing-theme .article-content {
+    column-count: 2;
+    column-gap: 2rem;
+  }
+}
