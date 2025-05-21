@@ -58,10 +58,50 @@ body.projects-theme {
   box-shadow: 0 4px 8px rgba(13, 110, 61, 0.1);
 }
 
+.projects-theme .project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.projects-theme .project-title-container {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .projects-theme .project-title {
   font-size: 1.3rem;
-  margin-bottom: 0.3rem;
+  margin: 0;
   color: #333;
+  display: inline;
+}
+
+.projects-theme .project-url {
+  font-size: 0.8rem;
+  color: #777;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.projects-theme .project-date {
+  font-size: 0.8rem;
+  color: #777;
+  text-align: right;
+  font-style: italic;
+}
+
+.projects-theme .project-title a {
+  color: #333;
+  text-decoration: none;
+  border-bottom: none;
+  transition: color 0.2s ease;
+}
+
+.projects-theme .project-title a:hover {
+  color: #0d6e3d;
+  border-bottom: none;
 }
 
 .projects-theme .project-description {

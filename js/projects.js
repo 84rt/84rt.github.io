@@ -71,11 +71,52 @@ function createProjectElement(project) {
     const projectCard = document.createElement('div');
     projectCard.className = 'project-card';
     
+    // Header container for title, URL, and date shipped
+    const headerContainer = document.createElement('div');
+    headerContainer.className = 'project-header';
+    
+    // Left side container for title and URL
+    const titleContainer = document.createElement('div');
+    titleContainer.className = 'project-title-container';
+    
     // Project title
     const titleElement = document.createElement('h2');
     titleElement.className = 'project-title';
-    titleElement.textContent = project.title;
-    projectCard.appendChild(titleElement);
+    
+    // If there's a demo URL, make the title a link
+    if (project.demoUrl) {
+        const titleLink = document.createElement('a');
+        titleLink.href = project.demoUrl;
+        titleLink.textContent = project.title;
+        // Always open links in a new page
+        titleLink.target = '_blank';
+        titleLink.rel = 'noopener noreferrer';
+        titleElement.appendChild(titleLink);
+    } else {
+        titleElement.textContent = project.title;
+    }
+    
+    titleContainer.appendChild(titleElement);
+    
+    // Display URL if available
+    if (project.displayUrl) {
+        const urlElement = document.createElement('span');
+        urlElement.className = 'project-url';
+        urlElement.textContent = project.displayUrl;
+        titleContainer.appendChild(urlElement);
+    }
+    
+    headerContainer.appendChild(titleContainer);
+    
+    // Date shipped if available
+    if (project.dateShipped) {
+        const dateElement = document.createElement('div');
+        dateElement.className = 'project-date';
+        dateElement.textContent = `Shipped: ${project.dateShipped}`;
+        headerContainer.appendChild(dateElement);
+    }
+    
+    projectCard.appendChild(headerContainer);
     
     // Project description
     const descriptionElement = document.createElement('div');
@@ -108,11 +149,9 @@ function createProjectElement(project) {
             linkElement.href = link.url;
             linkElement.textContent = link.text;
             
-            // Add target blank for external links
-            if (link.url.startsWith('http')) {
-                linkElement.target = '_blank';
-                linkElement.rel = 'noopener noreferrer';
-            }
+            // Always open links in a new page
+            linkElement.target = '_blank';
+            linkElement.rel = 'noopener noreferrer';
             
             linksContainer.appendChild(linkElement);
         });

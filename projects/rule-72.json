@@ -1,0 +1,14 @@
+{
+  "title": "Rule of 72 Calculator",
+  "displayUrl": "72.bartjaworski.com",
+  "description": "An interactive web application to practice the Rule of 72, a simple mathematical concept that helps estimate how long it will take for an investment to double at a given interest rate.",
+  "dateShipped": "May 14, 2025",
+  "tags": ["Web Application", "TypeScript", "Finance"],
+  "demoUrl": "https://72.bartjaworski.com/",
+  "links": [
+    {
+      "text": "View Source Code",
+      "url": "https://github.com/84rt/72"
+    }
+  ]
+}

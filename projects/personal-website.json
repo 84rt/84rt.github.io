@@ -1,11 +1,14 @@
 {
-  "title": "Personal Website",
-  "description": "A multi-themed personal website featuring a blog, projects, and investing section.",
-  "tags": ["HTML", "CSS", "JavaScript"],
+  "title": "U&Me - AI Mediator",
+  "displayUrl": "mediate.bartjaworski.com",
+  "description": "An AI-powered tool that helps mediate conversations between two people to reach mutual understanding. Users record their sides of a disagreement, and the AI provides an objective analysis.",
+  "dateShipped": "February 15, 2025",
+  "tags": ["AI", "TypeScript", "Web Application"],
+  "demoUrl": "https://mediate.bartjaworski.com/",
   "links": [
     {
-      "text": "View Code",
-      "url": "https://github.com/84rt/84rt.github.io"
+      "text": "View Source Code",
+      "url": "https://github.com/84rt/UandMe"
     }
   ]
 }
