@@ -1,0 +1,159 @@
+/* Style for the Coding Projects Tab - Modern with hacker vibe in light theme */
+body.projects-theme {
+  background-color: #f8f9fa;
+  color: #0d6e3d;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.projects-theme .site-header {
+  border-bottom: 1px solid rgba(13, 110, 61, 0.2);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.projects-name {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  color: #0d6e3d;
+  font-weight: 600;
+}
+
+.projects-theme .container {
+  max-width: 1000px;
+}
+
+.projects-theme .tab {
+  color: #555;
+}
+
+.projects-theme .tab.active {
+  color: #0d6e3d;
+  border-bottom: 2px solid #0d6e3d;
+}
+
+.projects-theme a {
+  color: #0d6e3d;
+  text-decoration: none;
+  border-bottom: 1px dotted #0d6e3d;
+}
+
+.projects-theme a:hover {
+  border-bottom: 1px solid #0d6e3d;
+}
+
+.projects-theme h1, .projects-theme h2, .projects-theme h3 {
+  color: #333;
+  font-weight: 600;
+}
+
+.projects-theme .project-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.projects-theme .project-card:hover {
+  box-shadow: 0 4px 8px rgba(13, 110, 61, 0.1);
+}
+
+.projects-theme .project-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+.projects-theme .project-description {
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.projects-theme .project-tags {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.projects-theme .project-tag {
+  background-color: #e8f5ef;
+  color: #0d6e3d;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+.projects-theme .project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.projects-theme .terminal {
+  background-color: #f0f5f3;
+  border-radius: 5px;
+  padding: 1rem;
+  border: 1px solid #d0e0d8;
+  margin: 2rem 0;
+}
+
+.projects-theme .terminal-header {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.projects-theme .terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.projects-theme .terminal-button.red {
+  background-color: #ff5f56;
+}
+
+.projects-theme .terminal-button.yellow {
+  background-color: #ffbd2e;
+}
+
+.projects-theme .terminal-button.green {
+  background-color: #27c93f;
+}
+
+.projects-theme .terminal-content {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  color: #0d6e3d;
+  line-height: 1.4;
+}
+
+.projects-theme .skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.projects-theme .skill-item {
+  background-color: #e8f5ef;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.projects-theme .cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background-color: #0d6e3d;
+  margin-left: 2px;
+  animation: blink 1.5s step-end infinite;
+  opacity: 0.7;
+}
+
+@keyframes blink {
+  from, to { opacity: 0.7; }
+  50% { opacity: 0; }
+}

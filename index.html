@@ -14,21 +14,50 @@
     <link rel="stylesheet" href="css/main.css">
     
     <!-- Tab-specific Stylesheets -->
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/blog.css">
-    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/investing.css">
 </head>
-<body class="blog-theme">
-    <div class="container">
-        <!-- Navigation Tabs -->
+<body class="home-theme">
+    <header class="site-header">
+        <div class="name-container">
+            <span id="author-name" class="typing-name">Bart Jaworski</span>
+        </div>
         <nav class="tabs">
-            <div class="tab active" data-tab="blog">Blog</div>
-            <div class="tab" data-tab="portfolio">Portfolio</div>
+            <div class="tab active" data-tab="home">Home</div>
+            <div class="tab" data-tab="blog">Blog</div>
+            <div class="tab" data-tab="projects">Projects</div>
             <div class="tab" data-tab="investing">Investing</div>
         </nav>
+    </header>
+    <div class="container">
+        
+        <!-- Home Content -->
+        <div id="home" class="content active">
+            <section class="home-section profile-section">
+                <div class="profile-photo">
+                    <img src="images/profile-photo.jpg" alt="Bart Jaworski" class="profile-image">
+                </div>
+                
+                <div class="home-content">
+                    <h1>Bart Jaworski</h1>
+                    <p>Hello! I'm a passionate developer and writer with interests in technology, finance, and minimalist design. This website serves as my digital home where I share my thoughts, projects, and investment insights.</p>
+                </div>
+            </section>
+            
+            <section class="home-section">
+                <h2>Connect With Me</h2>
+                <div class="social-links">
+                    <a href="https://github.com/84rt" class="social-link">GitHub</a>
+                    <a href="https://linkedin.com/in/bartjaworski" class="social-link">LinkedIn</a>
+                    <a href="https://twitter.com/bartjaworski" class="social-link">Twitter</a>
+                </div>
+            </section>
+        </div>
         
         <!-- Blog Content -->
-        <div id="blog" class="content active">
+        <div id="blog" class="content">
             <h1>Welcome to My Blog</h1>
             
             <article class="blog-post">
@@ -78,24 +107,12 @@
             </article>
         </div>
         
-        <!-- Portfolio Content -->
-        <div id="portfolio" class="content">
-            <h1>Coding Portfolio</h1>
-            
-            <div class="terminal">
-                <div class="terminal-header">
-                    <div class="terminal-button red"></div>
-                    <div class="terminal-button yellow"></div>
-                    <div class="terminal-button green"></div>
-                </div>
-                <div class="terminal-content">
-                    <span class="typing-animation">Welcome to my coding portfolio! Here you'll find projects I've built using various technologies.</span>
-                </div>
-            </div>
+        <!-- Projects Content -->
+        <div id="projects" class="content">
             
             <div class="project-card">
                 <h2 class="project-title">Personal Website</h2>
-                <div class="project-description">A multi-themed personal website featuring a blog, portfolio, and investing section.</div>
+                <div class="project-description">A multi-themed personal website featuring a blog, projects, and investing section.</div>
                 <div class="project-tags">
                     <span class="project-tag">HTML</span>
                     <span class="project-tag">CSS</span>
@@ -120,23 +137,7 @@
                 </div>
             </div>
             
-            <div class="terminal">
-                <div class="terminal-header">
-                    <div class="terminal-button red"></div>
-                    <div class="terminal-button yellow"></div>
-                    <div class="terminal-button green"></div>
-                </div>
-                <div class="terminal-content">
-                    <span class="typing-animation">$ ls -la skills/
-total 42
-drwxr-xr-x  2 user  staff  JavaScript
-drwxr-xr-x  2 user  staff  Python
-drwxr-xr-x  2 user  staff  React
-drwxr-xr-x  2 user  staff  Node.js
-drwxr-xr-x  2 user  staff  CSS
-drwxr-xr-x  2 user  staff  HTML</span>
-                </div>
-            </div>
+
         </div>
         
         <!-- Investing Content -->
@@ -166,51 +167,6 @@ drwxr-xr-x  2 user  staff  HTML</span>
                     <p>The emerging consensus among analysts suggests a more discriminating market ahead, with emphasis on profitability and sustainable business models rather than pure growth metrics.</p>
                 </div>
             </article>
-            
-            <div class="stock-ticker">
-                <h3>Portfolio Watchlist</h3>
-                <table class="stock-table">
-                    <thead>
-                        <tr>
-                            <th>Ticker</th>
-                            <th>Company</th>
-                            <th>Price</th>
-                            <th>Change</th>
-                            <th>P/E Ratio</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>AAPL</td>
-                            <td>Apple Inc.</td>
-                            <td>$192.36</td>
-                            <td class="stock-positive">+2.4%</td>
-                            <td>28.5</td>
-                        </tr>
-                        <tr>
-                            <td>MSFT</td>
-                            <td>Microsoft Corp.</td>
-                            <td>$415.73</td>
-                            <td class="stock-positive">+1.2%</td>
-                            <td>34.1</td>
-                        </tr>
-                        <tr>
-                            <td>GOOGL</td>
-                            <td>Alphabet Inc.</td>
-                            <td>$178.42</td>
-                            <td class="stock-negative">-0.8%</td>
-                            <td>22.7</td>
-                        </tr>
-                        <tr>
-                            <td>AMZN</td>
-                            <td>Amazon.com Inc.</td>
-                            <td>$182.90</td>
-                            <td class="stock-positive">+3.1%</td>
-                            <td>42.3</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
     </div>
     
