@@ -112,32 +112,39 @@ async function loadBlogPost() {
         // Use markdown-it to convert markdown to HTML
         const postContent = document.getElementById('post-content');
         
-        // Initialize markdown-it with options
-        // Check if markdownit is available as a global variable
-        if (typeof markdownit === 'undefined' && typeof window.markdownIt === 'undefined') {
-            console.error('markdown-it library not found');
-            throw new Error('markdown-it library not found');
+        // Try to render markdown with markdown-it first, fall back to simple renderer if not available
+        let renderedContent = '';
+        
+        try {
+            // Check if markdown-it is available
+            if (typeof window.markdownit !== 'undefined') {
+                // Use markdown-it
+                const md = window.markdownit({
+                    html: true,
+                    breaks: true,
+                    linkify: true,
+                    typographer: true
+                });
+                
+                // Add footnote plugin if available
+                if (typeof window.markdownitFootnote !== 'undefined') {
+                    md.use(window.markdownitFootnote);
+                }
+                
+                renderedContent = md.render(content);
+            } else {
+                // Fallback to simple markdown renderer
+                console.warn('markdown-it not available, using simple renderer');
+                renderedContent = window.simpleMarkdownToHtml(content);
+            }
+        } catch (error) {
+            console.error('Error rendering markdown:', error);
+            // Fallback to simple markdown renderer
+            renderedContent = window.simpleMarkdownToHtml(content);
         }
         
-        // Use the correct reference to the markdown-it library
-        const mdLib = typeof markdownit !== 'undefined' ? markdownit : window.markdownIt;
-        const md = mdLib({
-            html: true,           // Enable HTML tags in source
-            breaks: true,        // Convert '\n' in paragraphs into <br>
-            linkify: true,       // Autoconvert URL-like text to links
-            typographer: true,   // Enable some language-neutral replacement + quotes beautification
-        });
-        
-        // Add the footnote plugin if available
-        const footnotePlugin = typeof markdownitFootnote !== 'undefined' ? markdownitFootnote : 
-                              (typeof window.markdownitFootnote !== 'undefined' ? window.markdownitFootnote : null);
-        
-        if (footnotePlugin) {
-            md.use(footnotePlugin);
-        }
-        
-        // Render the markdown content
-        postContent.innerHTML = md.render(content);
+        // Render the content
+        postContent.innerHTML = renderedContent;
         
     } catch (error) {
         console.error('Error loading blog post:', error);

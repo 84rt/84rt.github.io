@@ -36,16 +36,36 @@
     <div id="loading">Loading post...</div>
     
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/markdown-it@13.0.1/dist/markdown-it.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/markdown-it-footnote@3.0.3/dist/markdown-it-footnote.min.js"></script>
+    <!-- Load markdown-it from unpkg (more reliable for GitHub Pages) -->
+    <script src="https://unpkg.com/markdown-it@13.0.1/dist/markdown-it.min.js"></script>
+    <script src="https://unpkg.com/markdown-it-footnote@3.0.3/dist/markdown-it-footnote.min.js"></script>
+    
+    <!-- Simple markdown renderer fallback in case CDN fails -->
     <script>
-        // Ensure markdown-it is available globally
-        if (typeof window.markdownit === 'undefined' && typeof markdownit !== 'undefined') {
-            window.markdownit = markdownit;
-        }
-        if (typeof window.markdownitFootnote === 'undefined' && typeof markdownitFootnote !== 'undefined') {
-            window.markdownitFootnote = markdownitFootnote;
-        }
+        // Fallback markdown renderer if markdown-it fails to load
+        window.simpleMarkdownToHtml = function(markdown) {
+            if (!markdown) return '';
+            
+            // Simple markdown conversion for basic formatting
+            return markdown
+                // Convert headings
+                .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+                .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+                // Convert bold and italic
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                // Convert links
+                .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>')
+                // Convert lists
+                .replace(/^\s*\-\s*(.*$)/gm, '<li>$1</li>')
+                // Convert paragraphs (any line that doesn't start with < and has content)
+                .replace(/^([^<].*)/gm, '<p>$1</p>')
+                // Fix lists
+                .replace(/<li>(.*?)<\/li>\s*<li>/g, '<li>$1</li>\n<li>')
+                .replace(/<li>(.*?)<\/li>/g, '<ul><li>$1</li></ul>')
+                .replace(/<\/ul>\s*<ul>/g, '');
+        };
     </script>
     <script src="./js/blog.js"></script>
 </body>
