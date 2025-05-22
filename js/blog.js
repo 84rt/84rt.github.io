@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const linkBase = '';
                 
                 const linkElement = document.createElement('a');
-                linkElement.href = `${linkBase}/post.html?slug=${post.slug}`;
+                linkElement.href = `post.html?slug=${post.slug}`;
                 linkElement.textContent = post.title;
                 
                 titleElement.appendChild(linkElement);
@@ -136,15 +136,14 @@ async function loadBlogPost() {
         const pathsToTry = [
             `./posts/${slug}.md`,                      // Local relative path
             `/posts/${slug}.md`,                       // Root relative path for custom domain
+            `posts/${slug}.md`,                        // Simple relative path (no leading slash)
             `${baseUrl}/posts/${slug}.md`,             // Base URL + path (for GitHub Pages)
-            `https://${window.location.host}/posts/${slug}.md`, // Absolute URL for custom domain
-            `https://${window.location.host}${baseUrl}/posts/${slug}.md` // Absolute URL with base (for GitHub Pages)
+            `https://${window.location.host}/posts/${slug}.md` // Absolute URL for custom domain
         ];
         
-        // Add raw GitHub URL as a fallback if we're on GitHub Pages
-        if (isGitHubPages) {
-            pathsToTry.push(`https://raw.githubusercontent.com/${repoName}/${repoName}.github.io/main/posts/${slug}.md`);
-        }
+        // Add GitHub-specific paths as fallbacks
+        pathsToTry.push(`https://raw.githubusercontent.com/84rt/84rt.github.io/main/posts/${slug}.md`);
+        pathsToTry.push(`https://84rt.github.io/posts/${slug}.md`);
         
         // Try each path until we find one that works
         let response = null;
@@ -171,7 +170,9 @@ async function loadBlogPost() {
             // Try with different base paths that might work on GitHub Pages or custom domains
             const additionalPaths = [
                 `${window.location.origin}/posts/${slug}.md`,
-                `${window.location.protocol}//${window.location.host}/posts/${slug}.md`
+                `${window.location.protocol}//${window.location.host}/posts/${slug}.md`,
+                `posts/${slug}.md`,
+                `../posts/${slug}.md`
             ];
             
             for (const path of additionalPaths) {
@@ -228,7 +229,7 @@ async function loadBlogPost() {
         const postHTML = `
             <header class="site-header">
                 <div class="name-container">
-                    <a href="${linkBase}/index.html" class="blog-name">Bart Jaworski</a>
+                    <a href="index.html" class="blog-name">Bart Jaworski</a>
                 </div>
             </header>
             <div class="container">
@@ -237,7 +238,7 @@ async function loadBlogPost() {
                     <div class="post-date">${date}</div>
                     <div class="post-content" id="post-content"></div>
                 </article>
-                <a href="${linkBase}/index.html" class="back-link">← Back to all posts</a>
+                <a href="index.html" class="back-link">← Back to all posts</a>
             </div>
         `;
         
@@ -269,16 +270,19 @@ async function loadBlogPost() {
         
     } catch (error) {
         console.error('Error loading blog post:', error);
+        // Define linkBase here to avoid reference error
+        const errorLinkBase = '';
+        
         document.body.innerHTML = `
             <header class="site-header">
                 <div class="name-container">
-                    <a href="${linkBase}/index.html" class="blog-name">Bart Jaworski</a>
+                    <a href="${errorLinkBase}/index.html" class="blog-name">Bart Jaworski</a>
                 </div>
             </header>
             <div class="container">
                 <h1>Post Not Found</h1>
                 <p>Sorry, the requested blog post could not be found.</p>
-                <a href="${linkBase}/index.html" class="back-link">← Back to all posts</a>
+                <a href="${errorLinkBase}/index.html" class="back-link">← Back to all posts</a>
             </div>
         `;
         document.body.classList.add('blog-theme');
