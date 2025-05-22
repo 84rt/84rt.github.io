@@ -67,3 +67,9 @@ python3 -m http.server 8000
 ```
 
 Then visit http://localhost:8000 in your browser.
+
+
+
+# TODO
+- The posts are not loading on the blog page in production
+- the hamburger menu is blue.. (on IOS)

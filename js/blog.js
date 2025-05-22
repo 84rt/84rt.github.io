@@ -13,14 +13,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         const isGitHubPages = window.location.hostname.includes('github.io');
         const repoName = isGitHubPages ? window.location.hostname.split('.')[0] : '';
         
+        // Get the base URL for the current environment
+        const baseUrl = isGitHubPages ? `/${repoName}` : '';
+        
         // Array of possible paths to try for index.json
         const pathsToTry = [
             `./posts/index.json`,                      // Local relative path
-            `/posts/index.json`,                       // Root relative path
-            `/${repoName}/posts/index.json`,           // GitHub Pages repo-specific path
-            `/posts/index.json`,                       // GitHub Pages root path
-            `https://${window.location.host}/posts/index.json` // Absolute URL
+            `/posts/index.json`,                       // Root relative path for custom domain
+            `${baseUrl}/posts/index.json`,             // Base URL + path (for GitHub Pages)
+            `https://${window.location.host}/posts/index.json`, // Absolute URL for custom domain
+            `https://${window.location.host}${baseUrl}/posts/index.json` // Absolute URL with base (for GitHub Pages)
         ];
+        
+        // Add raw GitHub URL as a fallback if we're on GitHub Pages
+        if (isGitHubPages) {
+            pathsToTry.push(`https://raw.githubusercontent.com/${repoName}/${repoName}.github.io/main/posts/index.json`);
+        }
         
         // Try each path until we find one that works
         let response = null;
@@ -80,8 +88,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const titleElement = document.createElement('h2');
                 titleElement.className = 'post-title';
                 
+                // Get the base URL for links
+                // For custom domains, we don't need a prefix
+                const linkBase = '';
+                
                 const linkElement = document.createElement('a');
-                linkElement.href = `post.html?slug=${post.slug}`;
+                linkElement.href = `${linkBase}/post.html?slug=${post.slug}`;
                 linkElement.textContent = post.title;
                 
                 titleElement.appendChild(linkElement);
@@ -117,14 +129,22 @@ async function loadBlogPost() {
         const isGitHubPages = window.location.hostname.includes('github.io');
         const repoName = isGitHubPages ? window.location.hostname.split('.')[0] : '';
         
+        // Get the base URL for the current environment
+        const baseUrl = isGitHubPages ? `/${repoName}` : '';
+        
         // Array of possible paths to try
         const pathsToTry = [
             `./posts/${slug}.md`,                      // Local relative path
-            `/posts/${slug}.md`,                       // Root relative path
-            `/${repoName}/posts/${slug}.md`,           // GitHub Pages repo-specific path
-            `/posts/${slug}.md`,                       // GitHub Pages root path
-            `https://${window.location.host}/posts/${slug}.md` // Absolute URL
+            `/posts/${slug}.md`,                       // Root relative path for custom domain
+            `${baseUrl}/posts/${slug}.md`,             // Base URL + path (for GitHub Pages)
+            `https://${window.location.host}/posts/${slug}.md`, // Absolute URL for custom domain
+            `https://${window.location.host}${baseUrl}/posts/${slug}.md` // Absolute URL with base (for GitHub Pages)
         ];
+        
+        // Add raw GitHub URL as a fallback if we're on GitHub Pages
+        if (isGitHubPages) {
+            pathsToTry.push(`https://raw.githubusercontent.com/${repoName}/${repoName}.github.io/main/posts/${slug}.md`);
+        }
         
         // Try each path until we find one that works
         let response = null;
@@ -146,20 +166,26 @@ async function loadBlogPost() {
             }
         }
         
-        // If all attempts fail, try a direct raw GitHub content URL as last resort
+        // If all attempts fail, try additional fallback options
         if (!response || !response.ok) {
-            // For GitHub Pages, try the raw GitHub content URL
-            if (isGitHubPages) {
-                const rawGitHubPath = `https://raw.githubusercontent.com/${repoName}/${repoName}.github.io/main/posts/${slug}.md`;
+            // Try with different base paths that might work on GitHub Pages or custom domains
+            const additionalPaths = [
+                `${window.location.origin}/posts/${slug}.md`,
+                `${window.location.protocol}//${window.location.host}/posts/${slug}.md`
+            ];
+            
+            for (const path of additionalPaths) {
                 try {
-                    console.log(`Trying raw GitHub URL: ${rawGitHubPath}`);
-                    response = await fetch(rawGitHubPath);
-                    if (response.ok) {
-                        foundPath = rawGitHubPath;
-                        console.log(`Successfully loaded from raw GitHub: ${rawGitHubPath}`);
+                    console.log(`Trying additional path: ${path}`);
+                    const tempResponse = await fetch(path);
+                    if (tempResponse.ok) {
+                        response = tempResponse;
+                        foundPath = path;
+                        console.log(`Successfully loaded from additional path: ${path}`);
+                        break;
                     }
                 } catch (error) {
-                    console.log(`Failed with raw GitHub path: ${rawGitHubPath}`);
+                    console.log(`Failed with additional path: ${path}`);
                 }
             }
         }
@@ -195,10 +221,14 @@ async function loadBlogPost() {
         document.body.classList.add('blog-theme');
         
         // Create the post HTML structure
+        // Determine the correct base path for links
+        // For custom domains, we don't need a prefix
+        const linkBase = '';
+        
         const postHTML = `
             <header class="site-header">
                 <div class="name-container">
-                    <a href="./index.html" class="blog-name">Bart Jaworski</a>
+                    <a href="${linkBase}/index.html" class="blog-name">Bart Jaworski</a>
                 </div>
             </header>
             <div class="container">
@@ -207,7 +237,7 @@ async function loadBlogPost() {
                     <div class="post-date">${date}</div>
                     <div class="post-content" id="post-content"></div>
                 </article>
-                <a href="./index.html" class="back-link">← Back to all posts</a>
+                <a href="${linkBase}/index.html" class="back-link">← Back to all posts</a>
             </div>
         `;
         
@@ -242,13 +272,13 @@ async function loadBlogPost() {
         document.body.innerHTML = `
             <header class="site-header">
                 <div class="name-container">
-                    <a href="./index.html" class="blog-name">Bart Jaworski</a>
+                    <a href="${linkBase}/index.html" class="blog-name">Bart Jaworski</a>
                 </div>
             </header>
             <div class="container">
                 <h1>Post Not Found</h1>
                 <p>Sorry, the requested blog post could not be found.</p>
-                <a href="./index.html" class="back-link">← Back to all posts</a>
+                <a href="${linkBase}/index.html" class="back-link">← Back to all posts</a>
             </div>
         `;
         document.body.classList.add('blog-theme');
