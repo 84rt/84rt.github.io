@@ -1,0 +1,18 @@
+{
+  "title": "U&Me - AI Mediator",
+  "dateShipped": "February 2025",
+  "description": "An AI-powered mediation tool that helps facilitate conversations and resolve disagreements. Users record their perspectives separately, and the application generates an objective, unbiased analysis to help both parties reach mutual understanding.",
+  "displayUrl": "mediate.bartjaworski.com",
+  "demoUrl": "https://mediate.bartjaworski.com/",
+  "tags": ["AI", "Mediation", "Communication", "Web App"],
+  "links": [
+    {
+      "text": "Website",
+      "url": "https://mediate.bartjaworski.com/"
+    },
+    {
+      "text": "GitHub",
+      "url": "https://github.com/84rt/UandMe"
+    }
+  ]
+}
