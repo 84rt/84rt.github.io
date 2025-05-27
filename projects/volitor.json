@@ -1,0 +1,12 @@
+{
+  "title": "Volitor.ai",
+  "dateShipped": "2025",
+  "description": "LLM-based application for fundamental analysis, enabling users to leverage large language models to interpret, analyze, and gain insights from financial and business data.",
+  "tags": ["AI", "LLM", "Data Analysis", "Web App"],
+  "links": [
+    {
+      "text": "Website",
+      "url": "https://volitor.ai/"
+    }
+  ]
+}
