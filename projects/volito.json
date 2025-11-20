@@ -1,0 +1,12 @@
+{
+  "title": "Volito.ai",
+  "dateShipped": "2025",
+  "description": "LLM-based application for fundamental analysis (rebranded from volitor.ai), enabling users to leverage large language models to interpret, analyze, and gain insights from financial and business data. It includes tools for streamlining value investing.",
+  "tags": ["AI", "LLM", "Data Analysis", "Web App"],
+  "links": [
+    {
+      "text": "Website",
+      "url": "https://www.volito.ai/"
+    }
+  ]
+}
