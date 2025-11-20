@@ -49,8 +49,6 @@ A book that is becoming somewhat infamous in the circle of entrepreneurs is "The
 
 ## Was it too many?
 
-Interestingly enough, I felt like it was just the right amount of books to read in a year. It isn't always possible to read this much, especially when your work requires you to read a lot. However, I am lucky to have been able to read this much this year.
+Surprisingly, reading this many books in a year felt just right. It's not always possible to maintain such a pace, especially when your work already involves a lot of reading, so I feel grateful for the opportunity.
 
- A life spent learning is a life spent well.
-
-If I have learned anything from all of those books, it is that I know nothing and I should know a lot more.
+If I've learned anything from all of those books, it is that I know nothing and I should know more.
