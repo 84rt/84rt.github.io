@@ -100,9 +100,18 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-content">
-            <p>&copy; 2025 Bart Jaworski. All rights reserved.</p>
+            <p id="footer-text">&copy; <span id="footer-year"></span> Bart Jaworski. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        // Dynamically set year in footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearSpan = document.getElementById('footer-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
     </div>
     
     <!-- Scripts -->
