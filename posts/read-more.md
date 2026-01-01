@@ -13,9 +13,9 @@ At first, I thought that to get the most out of my reading this year, I’d need
 
 Your brain has a process that, each night, transfers information from short-term to long-term memory, effectively deciding what to “save” or remember. It evaluates everything from your day and prioritizes the most important information. However, it’s rare to reach a point where your brain must discard valuable information to make room for even more, simply because you’ve consumed too much relevant data.
 
-That said, this overload can happen if you spend all day studying, but most of us go to sleep with plenty of room for valuable information to be saved to “long-term storage” in our brains. If you’re currently reading only a few books a year, reading more would mean replacing other activities with reading. So, at the end of the day, when your brain decides what to save and what to discard, you’ll retain more of the important information. This means that we’re likely not reading enough on daily biases. 
+That said, this overload can happen if you spend all day studying, but most of us go to sleep with plenty of room for valuable information to be saved to “long-term storage” in our brains. If you’re currently reading only a few books a year, reading more would mean replacing other activities with reading. So, at the end of the day, when your brain decides what to save and what to discard, you’ll retain more of the important information. This means that we're likely not reading enough on a daily basis. 
 
-I personally got most convinced to read more by the [area under the curve](https://www.lesswrong.com/posts/ZCXjmeHNHYiM2uCw4/area-under-the-curve-eat-dirt-broccoli-errors-copernicus-and) argument.
+What convinced me most to read more was the [area under the curve](https://www.lesswrong.com/posts/ZCXjmeHNHYiM2uCw4/area-under-the-curve-eat-dirt-broccoli-errors-copernicus-and) argument.
 
 This isn’t transformer mechanistic interpretability^[See: https://www.neelnanda.io/mechanistic-interpretability/glossary] – you learn more by reading more.
 
