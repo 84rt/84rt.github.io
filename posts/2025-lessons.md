@@ -1,3 +1,7 @@
+---
+title: 2025 Lessons 
+date: December 28, 2025
+---
 
 I've been following the mindset of speedrunning learning over the past year. As I have found experience to be the best teacher and failure the best kind of lesson one can get, I have ended up speedrunning failure. It is unclear to me whether this is the best path in life - when I tell people they should speedrun failure, they look at me like I'm crazy and ask, "Why not speedrun success?" There is no question about the end goal being success, but unless one hopes to get there by sheer luck, a strong foundation of understanding of the path there is needed. The protocol for speedrunning failure I followed can be outlined as such: 
   1. Outline the end goal
