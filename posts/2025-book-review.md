@@ -1,0 +1,18 @@
+---
+title: 2025 Book Review
+date: January 1, 2026
+---
+
+2025 was a busy year for me, so I only managed to read 28 books. Which is nonetheless 14 more than an average American which is supposedly at 12 books a year. This is an intriguing statistic as ~20% of America is functionally illiterate. Though I suppose averages are often misleading, like the six foot man who drowned in a river that was only five foot deep on average. While I didn't swim in many rivers this year, I did read a few books that made me wish I had read them a lot sooner. I knew exactly that I am going to feel that way after reading them long before I turned the first page due to their general fame and reputation. I simply decided to see what happens when one reads the books that everyone recommends to them. The lesson is, you join the club of people who say you should read them as they are simply great reads. In this category I've read the following four books:
+1. **Sapiens** 2011 (Yuval Noah Harari). A well written, somewhat holistic, and witty insight drawing walk though the history of humanity, starting from the beginning of the universe, through early life forms all the way to artificial intelligence. 
+2. **Long Walk to Freedom** 1994 (Nelson Mandela). An autobiography written in a prison cell of a man whose cheerfulness and relentless ambition to stand by virtue has set a high water mark for what being a good man truly looks like. 
+3. **Fooled by Randomness** 2001 (Nassim Taleb). Angry Lebanese billionaire's rants on everything that is wrong with everything, but mostly markets, humans and himself. It also has some well written scientific explanations attesting the claims. 
+4. **Poor Charlie's Almanack** 2005 (Charlie Munger). A collection of talks by Charlie on things that he judged to be the most useful to talk about at a given time. You might not agree with his judgment, but that only makes it a greater of a reason to read the book! 
+
+As these are well known and well reviewed, instead of writing another naive and opinionated review, I am going to highlight some of the similarities between them. 
+
+They all put things in the perspective of time. Mandela's story shows how brutally slow change can be, even something as simple as equal racial rights only came to South Africa in 1994 (that's 32 years ago!). Harari's perspective of thousands of years makes our entire civilization look like a brief experiment. Munger and Taleb show precisely how over decades small things compound into great changes and how rare events accumulate.
+
+Be suspicious of the stories we tell ourselves, or at least know that these are just stories! Harari famously argues that shared fictions, such as money, nations, religions, are what let our species cooperate at scale. Taleb wittily warns that we impose narrative on randomness, seeing patterns where there's only noise. Munger rigorously builds his worldview on spotting where conventional thinking quietly fails. Mandela's genius was understanding the stories his opponents told themselves, and using that to transform enemies into partners. 
+
+The big lesson from all four: *reality is messier than you'd like*. It's composed of many systems that are inter-tangled and built on top of animalistic biases. Biases that served us well on the savannah but betray us in markets and politics. The instinct is to simplify (notably a great ability of the brain), saying "X caused Y" with conviction. But when experts predict complex systems you should be suspicious. Admitting to complexity is not comfortable, but comfort was never the point. 
