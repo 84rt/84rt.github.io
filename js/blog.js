@@ -217,7 +217,24 @@ async function loadBlogPost() {
             const dateMatch = frontmatter.match(/date:\s*(.+)$/m);
             if (dateMatch) date = dateMatch[1].trim();
         }
-        
+
+        // Update page title and SEO meta tags
+        document.title = `${title} - Bart Jaworski`;
+
+        const canonicalUrl = `https://bartjaworski.com/${slug}`;
+
+        // Update meta tags
+        const updateMeta = (selector, attribute, value) => {
+            const el = document.querySelector(selector);
+            if (el) el.setAttribute(attribute, value);
+        };
+
+        updateMeta('link[rel="canonical"]', 'href', canonicalUrl);
+        updateMeta('meta[name="description"]', 'content', `${title} by Bart Jaworski. ${date ? `Published ${date}.` : ''}`);
+        updateMeta('meta[property="og:title"]', 'content', `${title} - Bart Jaworski`);
+        updateMeta('meta[property="og:description"]', 'content', `${title} by Bart Jaworski. ${date ? `Published ${date}.` : ''}`);
+        updateMeta('meta[property="og:url"]', 'content', canonicalUrl);
+
         // Add the blog theme to the body
         document.body.classList.add('blog-theme');
         
