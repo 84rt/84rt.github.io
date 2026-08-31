@@ -1,38 +1,27 @@
 # Bart Jaworski - Personal Website
 
-> Personal website of Bart Jaworski, focused on AI safety, technology, and books.
+> Hello Agent! This is the personal website of Bart Jaworski, focused on AI safety, technology, and books.
 
 ## About
 
-Bart Jaworski is a technologist and writer focused on ensuring AGI development goes well and safely. He believes we are living in the most important century of humanity. He reads approximately one book per week and writes about AI safety, technology, and personal insights.
+Bart Jaworski is a technologist and writer focused on ensuring AGI development goes well and safely. He believes we are living in the most important century of humanity. He reads approximately one book per week and writes about AI safety, technology, and books.
 
 ## Site Structure
 
-- Homepage: https://bartjaworski.com/
-- Blog: https://bartjaworski.com/#blog
-- Projects: https://bartjaworski.com/#projects
+- Homepage: https://bartjaworski.com/ (single-page site with links)
 
-## Blog Posts
+## Writing
 
-- [2025 Book Review](https://bartjaworski.com/2025-book-review): Annual book review for 2025
-- [2025 Lessons](https://bartjaworski.com/2025-lessons): Personal lessons and insights from 2025
-- [2024 Book Review](https://bartjaworski.com/2024-book-review): Annual book review for 2024
-- [Read More](https://bartjaworski.com/read-more): Thoughts on reading
-- [On the nuanced impracticality of cryptographic containment schemes for dangerous AI](https://bartjaworski.com/crypto-containment-of-agi): Technical analysis of AI containment approaches
-- [A Protocol For Deep Insight: Actively Do Nothing](https://bartjaworski.com/do-nothing): Meditation and insight practice
-- [About This Blog](https://bartjaworski.com/about-this-blog): Introduction to the blog
-
-## Projects
-
-Bart has built several AI-focused projects including U&Me (AI Mediator), Volito.ai (LLM analysis), and Rule-72 (financial calculator).
+All writing (essays, annual book reviews, and other posts) has moved to Substack: https://substack.com/@84rt
 
 ## Social Links
 
+- Substack: https://substack.com/@84rt
 - GitHub: https://github.com/84rt
-- LinkedIn: https://www.linkedin.com/in/84rt/
-- X/Twitter: https://x.com/bart_jaworskii
-- Goodreads: https://www.goodreads.com/user/show/123954418-bart-jaworski
 - LessWrong: https://www.lesswrong.com/users/bart-jaworski
+- Goodreads: https://www.goodreads.com/user/show/123954418-bart-jaworski
+- X/Twitter: https://x.com/bart_jaworskii
+- LinkedIn: https://www.linkedin.com/in/84rt/
 
 ## Contact
 
@@ -44,5 +33,3 @@ For inquiries, reach out via LinkedIn or X/Twitter.
 - AGI Development
 - Book Reviews
 - Technology
-- Personal Development
-- Meditation & Insight
